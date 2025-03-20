@@ -23,7 +23,7 @@ const HeroContainer = () => {
             </div>
             <br />
             <div className='image-container'>
-              <img src={process.env.PUBLIC_URL + '/images/bg.png'} alt='background' />
+              <img src={'https://www.cypnow.co.uk/media/qtomobfc/deafboytherapyadobestock_256261355.jpeg?width=1002&height=668&bgcolor=White&v=1daece5adf59630'} alt='background' />
             </div>
           </Col>
         </Row>

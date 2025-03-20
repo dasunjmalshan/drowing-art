@@ -1,7 +1,7 @@
 // SideNavBar.js
 import React, { useState } from "react";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-import { AiOutlineAudio, AiOutlineStop, AiOutlineFormatPainter, AiOutlineHome, AiOutlineNotification, AiFillHome, AiOutlineBarChart, AiFillBackward, AiOutlineFastBackward, AiOutlineStepBackward, AiOutlineDotChart, AiOutlineCalendar, AiOutlineEdit, AiFillFormatPainter, AiOutlineTwitter } from 'react-icons/ai'
+import { AiOutlineAudio, AiOutlineStop, AiOutlineFormatPainter, AiOutlineHome, AiOutlineNotification, AiFillHome, AiOutlineBarChart, AiFillBackward, AiOutlineFastBackward, AiOutlineStepBackward, AiOutlineDotChart, AiOutlineCalendar, AiOutlineEdit, AiFillFormatPainter, AiOutlineTwitter, AiFillPauseCircle } from 'react-icons/ai'
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import { Link } from "react-router-dom";
 import { FaVoicemail } from "react-icons/fa";
@@ -58,6 +58,12 @@ const SideNavBar = ({onToggle}) => {
             <Link to={'/dashboard/color-lesson'}><AiFillFormatPainter style={{ fontSize: "1.75em" }} /></Link>
           </NavIcon>
           <NavText><Link to={'/dashboard/color-lesson'}>Paint Lessons</Link></NavText>
+        </NavItem>
+        <NavItem eventKey="painter2">
+          <NavIcon>
+            <Link to={'/dashboard/color-lesson2'}><AiFillPauseCircle style={{ fontSize: "1.75em" }} /></Link>
+          </NavIcon>
+          <NavText><Link to={'/dashboard/color-lesson2'}>Color Lessons</Link></NavText>
         </NavItem>
         
         

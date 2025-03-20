@@ -19,6 +19,7 @@ import SignLanguageLessons from './components/hand_sign/SignLanguageLessons';
 import PaintLesson from './pages/dashboard/PainLesson';
 import { useEffect } from 'react';
 import SignAlpabetLessons from './components/hand_sign/SignAphabet';
+import PaintLessonV2 from './pages/dashboard/PaintLessonV2';
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
             <Route element={<Questionaire />} path="questions" />
             <Route element={<LipMovingLessons />} path="lip-lessons" />
             <Route element={<SnakeGame />} path="snake-game" />
-            <Route element={<PaintLesson />} path="color-lesson" />
+            <Route element={<PaintLesson />} path="color-lesson2" />
+            <Route element={<PaintLessonV2 />} path="color-lesson" />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>

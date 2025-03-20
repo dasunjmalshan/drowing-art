@@ -127,6 +127,8 @@ function PaintCanvas({ level }) {
       return;
     }
 
+    console.log("Hii")
+
     const blob = new Blob(recordedChunks, { type: "video/mp4" });
     const formData = new FormData();
     formData.append("video", blob, "recorded-video.mp4");
@@ -160,7 +162,7 @@ function PaintCanvas({ level }) {
   const colors = ["pink", "orange", "black", "blue", "green", "purple", "red", "yellow", "white", "brown", "gray", "beige", "cyan"];
 
   return (
-    <div style={{ display: "flex", width: "100%", gap: "20px" }}>
+    <div style={{ display: "flex", width: "100%", gap: "20px", backgroundColor: '#00b894', borderRadius: '20px', padding: '10px' }}>
       {/* Canvas Section (2/3 width) */}
       <div style={{ flex: 2 }}>
         <h5>{level.title}</h5>
@@ -170,22 +172,28 @@ function PaintCanvas({ level }) {
         </div>
 
         {/* Color Palette */}
-        <div className="color-palette">
-          {colors.map((color) => (
-            <button
-              key={color}
-              onClick={() => changeColor(color)}
-              style={{
-                backgroundColor: color,
-                width: 30,
-                height: 30,
-                margin: 5,
-                borderRadius: "50%",
-                border: selectedColor === color ? "3px solid #000" : "1px solid #ddd",
-              }}
-            />
-          ))}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+  
+
+          {/* Rectangle Color Boxes */}
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "start" }}>
+            {colors.map((color) => (
+              <div
+                key={color}
+                onClick={() => changeColor(color)}
+                style={{
+                  backgroundColor: color,
+                  width: 60,
+                  height: 30,
+                  borderRadius: "5px",
+                  border: selectedColor === color ? "3px solid #000" : "1px solid #ddd",
+                  cursor: "pointer",
+                }}
+              />
+            ))}
+          </div>
         </div>
+
 
         {/* Brush Size */}
         <div>
@@ -202,7 +210,7 @@ function PaintCanvas({ level }) {
       </div>
 
       {/* Camera Section (1/3 width) */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "10px" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "10px", backgroundColor: '#00cec9', padding: '5px' }}>
         <video ref={videoRef} width="100%" height="auto" autoPlay muted style={{ display: isCameraOn ? "block" : "none" }} />
 
         <button onClick={toggleCamera} style={{ padding: "10px", display: "flex", alignItems: "center", gap: "5px" }}>
